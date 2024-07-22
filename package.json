@@ -1,7 +1,7 @@
 {
   "name": "cookies",
   "version": "1.0.0",
-  "main": "getCookies.js",
+  "main": "node getCookies.js",
   "scripts": {
     "start": "node setCookies.js"
   },
