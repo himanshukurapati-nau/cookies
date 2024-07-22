@@ -2,6 +2,9 @@
   "name": "cookies",
   "version": "1.0.0",
   "main": "getCookies.js",
+  "scripts": {
+    "start": "node setCookies.js"
+  }
   "keywords": [],
   "author": "",
   "license": "ISC",
