@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "getCookies.js",
   "scripts": {
-    "start": "node getCookies.js",
-    "setCookies": "node setCookies.js"
+    "start": "node setCookies.js"
   },
   "keywords": [],
   "author": "",
