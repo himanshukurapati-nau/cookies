@@ -1,23 +1,22 @@
-// getCookies.js
-const http = require('http');
-const express = require('express');  // require express
-const cookieParser = require('cookie-parser');  // require cookie-parser
+const express = require('express');
+const app = express();
+const cookieParser = require('cookie-parser'); // Ensure you have cookie-parser installed
 
-const app = express();  // create an express app
-app.use(cookieParser());  // use cookie-parser middleware
+app.use(cookieParser());
 
 app.get('/getcookies', (req, res) => {
-    const name = req.cookies.name || 'Unknown';
-    const email = req.cookies.email || 'Unknown';
-
-    if (name !== 'Unknown' && email !== 'Unknown') {
-        res.send(`Welcome back, ${name} (${email})!`);
+    // Your logic to retrieve and handle cookies here
+    const cookies = req.cookies;
+    
+    if (cookies.name && cookies.email) {
+        res.send(`Welcome back, ${cookies.name} (${cookies.email})!`);
     } else {
         res.status(401).send('Authentication failed. Please log in.');
     }
 });
 
-const PORT = process.env.PORT || 3001;  // use environment port or default to 3001
+const PORT = process.env.PORT || 3000; // Use process.env.PORT for Azure compatibility
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
